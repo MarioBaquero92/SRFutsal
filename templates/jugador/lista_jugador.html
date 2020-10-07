@@ -1,0 +1,158 @@
+{% extends 'base/base.html' %}
+
+{% block titulo %} Lista jugadores {% endblock %}
+
+{%block app_name %}
+Lista de todos los jugadores ingresados
+{% endblock %}
+
+{% block contenido %}
+<div class="card shadow mb-4">
+	<div class="card-header py-3">
+		<h6 class="m-0 font-weight-bold text-primary">
+			<center>Tabla jugadores</center>
+		</h6>
+	</div>
+	<div class="card-body">
+		<center>
+			<div class="table-responsive">
+
+
+				<table class="table-sm table-bordered" id="dataTable" width="100%" cellspacing="0">
+					<thead>
+
+						<tr>
+							<th>
+								<center>Id</center>
+							</th>
+							<th>
+								<center>Nombre y apellido</center>
+							</th>
+							<th>
+								<center>Edad</center>
+							</th>
+							<th>
+								<center>Peso (Kg)</center>
+							</th>
+							<th>
+								<center>Estatura (cm)</center>
+							</th>
+							<th>
+								<center>Tipo</center>
+							</th>
+							<th>
+								<center>Ritmo</center>
+							</th>
+							<th>
+								<center>Tiros</center>
+							</th>
+							<th>
+								<center>Pases</center>
+							</th>
+							<th>
+								<center>Defensa</center>
+							</th>
+							<th>
+								<center>Paradas</center>
+							</th>
+							<th>
+								<center>Reflejos</center>
+							</th>
+							<th>
+								<center>Postura</center>
+							</th>
+							<!-- <th>
+								<center>Disponibilidad</center>
+							</th> -->
+							<th></th>
+							<th></th>
+						</tr>
+
+					</thead>
+					<tbody>
+						{% if object_list %}
+						{% for jugador in object_list %}
+						<tr>
+							<td>
+								<center>{{jugador.id}}</center>
+							</td>
+							<td>
+								<center>{{jugador.nombre_completo}}</center>
+							</td>
+							<td>
+								<center>{{jugador.edad}}</center>
+							</td>
+							<td>
+								<center>{{jugador.peso}}</center>
+							</td>
+							<td>
+								<center>{{jugador.estatura}}</center>
+							</td>
+							<td>
+								<center>{{jugador.perfil}}</center>
+							</td>
+							<td>
+								<center>{{jugador.ritmo}}</center>
+							</td>
+							<td>
+								<center>{{jugador.tiros}}</center>
+							</td>
+							<td>
+								<center>{{jugador.pases}}</center>
+							</td>
+							<td>
+								<center>{{jugador.defensa}}</center>
+							</td>
+							<td>
+								<center>{{jugador.paradas}}</center>
+							</td>
+							<td>
+								<center>{{jugador.reflejos}}</center>
+							</td>
+							<td>
+								<center>{{jugador.posicionamiento}}</center>
+							</td>
+							<!-- <td>
+								<center>{{jugador.disponibilidad}}</center>
+							</td> -->
+
+							<td>
+								<center>
+									<a class="btn-circle btn-info btn-sm"
+										href="{% url 'jugador:editar_jugadores' jugador.id %}"><i class="fas fa-edit"
+											data-toggle="tooltip" title="Editar"></i></a>
+								</center>
+							</td>
+
+							<td>
+								<center>
+									<a class="btn-circle btn-danger btn-sm"
+										href="{% url 'jugador:eliminar_jugadores' jugador.id %}"><i class="fas fa-trash"
+											data-toggle="tooltip" title="Eliminar"></i></a>
+								</center>
+							</td>
+						</tr>
+						{% endfor %}
+
+						{% else %}
+						<h1>No hay resgistros de jugadores</h1>
+
+						{% endif %}
+					</tbody>
+				</table>
+
+			</div>
+		</center>
+	</div>
+</div>
+
+{% endblock %}
+
+{% block javascript %}
+{{block.super}}
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('[data-toggle="tooltip"]').tooltip();
+	});
+</script>
+{% endblock %}

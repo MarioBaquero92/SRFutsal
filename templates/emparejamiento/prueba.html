@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+{% for jugador in jugadores %}
+
+	{% if forloop.counter0 == 0 %}
+	<div style="position: absolute;margin: 30px 161px">
+	<a class="" onclick="abrirModal({{jugador.id}}, {{jugador.nombre}}, {{jugador.ritmo}}, {{jugador.tiros}}, {{jugador.pases}}, {{jugador.defensa}}, {{jugador.paradas}}, {{jugador.reflejos}}, {{jugador.posicionamiento}});">
+	  <img src="{% static 'imagenes/portero1.png' %}"/>
+	</a>
+	</div>
+
+	{% elif forloop.counter0 == 1 %}
+	<div style="position: absolute;margin: 159px 86px"> 
+	<a class="" onclick="abrirModal({{jugador.id}}, {{jugador.nombre}}, {{jugador.ritmo}}, {{jugador.tiros}}, {{jugador.pases}}, {{jugador.defensa}}, {{jugador.paradas}}, {{jugador.reflejos}}, {{jugador.posicionamiento}});">
+	  <img src="{% static 'imagenes/jugador1.png' %}"/>
+	</a>
+	</div>
+
+	{% elif forloop.counter0 == 2 %}
+	<div style="position: absolute;margin: 159px 236px"> 
+	<a class="" onclick="abrirModal({{jugador.id}}, {{jugador.nombre}}, {{jugador.ritmo}}, {{jugador.tiros}}, {{jugador.pases}}, {{jugador.defensa}}, {{jugador.paradas}}, {{jugador.reflejos}}, {{jugador.posicionamiento}});">
+	  <img src="{% static 'imagenes/jugador1.png' %}"/>
+	</a>
+	</div>
+
+	{% elif forloop.counter0 == 3 %}
+	<div style="position: absolute;margin: 253px 124px"> 
+	<a class="" onclick="abrirModal({{jugador.id}}, {{jugador.nombre}}, {{jugador.ritmo}}, {{jugador.tiros}}, {{jugador.pases}}, {{jugador.defensa}}, {{jugador.paradas}}, {{jugador.reflejos}}, {{jugador.posicionamiento}});">
+	  <img src="{% static 'imagenes/jugador1.png' %}"/>
+	</a>
+	</div>
+
+	{% elif forloop.counter0 == 4 %}
+	<div style="position: absolute;margin: 253px 194px"> 
+	<a class="" onclick="abrirModal({{jugador.id}}, {{jugador.nombre}}, {{jugador.ritmo}}, {{jugador.tiros}}, {{jugador.pases}}, {{jugador.defensa}}, {{jugador.paradas}}, {{jugador.reflejos}}, {{jugador.posicionamiento}});">
+	  <img src="{% static 'imagenes/jugador1.png' %}"/>
+	</a>
+	</div>
+
+	{% elif forloop.counter0 == 5 %}
+	<div style="position: absolute;margin: 39px 361px"> 
+	<a class="" onclick="abrirModal({{jugador.id}}, {{jugador.nombre}}, {{jugador.ritmo}}, {{jugador.tiros}}, {{jugador.pases}}, {{jugador.defensa}}, {{jugador.paradas}}, {{jugador.reflejos}}, {{jugador.posicionamiento}});">
+	  <img src="{% static 'imagenes/jugador1.png' %}"/>
+	</a>
+	</div>
+
+	{% elif forloop.counter0 == 6 %}
+	<div style="position: absolute;margin: 99px 361px"> 
+	<a class="" onclick="abrirModal({{jugador.id}}, {{jugador.nombre}}, {{jugador.ritmo}}, {{jugador.tiros}}, {{jugador.pases}}, {{jugador.defensa}}, {{jugador.paradas}}, {{jugador.reflejos}}, {{jugador.posicionamiento}});">
+	  <img src="{% static 'imagenes/jugador1.png' %}"/>
+	</a>
+	</div>
+
+	{% elif forloop.counter0 == 7 %}
+	<div style="position: absolute;margin: 159px 361px"> 
+	<a class="" onclick="abrirModal({{jugador.id}}, {{jugador.nombre}}, {{jugador.ritmo}}, {{jugador.tiros}}, {{jugador.pases}}, {{jugador.defensa}}, {{jugador.paradas}}, {{jugador.reflejos}}, {{jugador.posicionamiento}});">
+	  <img src="{% static 'imagenes/jugador1.png' %}"/>
+	</a>
+	</div>
+
+	{% if forloop.counter0 == 8 %}
+	<div style="position: absolute;margin: 619px 161px">
+	<a class="" onclick="abrirModal({{jugador.id}}, {{jugador.nombre}}, {{jugador.ritmo}}, {{jugador.tiros}}, {{jugador.pases}}, {{jugador.defensa}}, {{jugador.paradas}}, {{jugador.reflejos}}, {{jugador.posicionamiento}});">
+	  <img src="{% static 'imagenes/portero2.png' %}"/>
+	</a>
+	</div>
+
+	{% if forloop.counter0 == 9 %}
+	<div style="position: absolute;margin: 489px 86px">
+	<a class="" onclick="abrirModal({{jugador.id}}, {{jugador.nombre}}, {{jugador.ritmo}}, {{jugador.tiros}}, {{jugador.pases}}, {{jugador.defensa}}, {{jugador.paradas}}, {{jugador.reflejos}}, {{jugador.posicionamiento}});">
+	  <img src="{% static 'imagenes/jugador2.png' %}"/>
+	</a>
+	</div>
+
+	{% if forloop.counter0 == 10 %}
+	<div style="position: absolute;margin: 489px 236px">
+	<a class="" onclick="abrirModal({{jugador.id}}, {{jugador.nombre}}, {{jugador.ritmo}}, {{jugador.tiros}}, {{jugador.pases}}, {{jugador.defensa}}, {{jugador.paradas}}, {{jugador.reflejos}}, {{jugador.posicionamiento}});">
+	  <img src="{% static 'imagenes/jugador2.png' %}"/>
+	</a>
+	</div>
+
+	{% if forloop.counter0 == 11 %}
+	<div style="position: absolute;margin: 394px 124px">
+	<a class="" onclick="abrirModal({{jugador.id}}, {{jugador.nombre}}, {{jugador.ritmo}}, {{jugador.tiros}}, {{jugador.pases}}, {{jugador.defensa}}, {{jugador.paradas}}, {{jugador.reflejos}}, {{jugador.posicionamiento}});">
+	  <img src="{% static 'imagenes/jugador2.png' %}"/>
+	</a>
+	</div>
+
+	{% if forloop.counter0 == 12 %}
+	<div style="position: absolute;margin: 394px 194px">
+	<a class="" onclick="abrirModal({{jugador.id}}, {{jugador.nombre}}, {{jugador.ritmo}}, {{jugador.tiros}}, {{jugador.pases}}, {{jugador.defensa}}, {{jugador.paradas}}, {{jugador.reflejos}}, {{jugador.posicionamiento}});">
+	  <img src="{% static 'imagenes/jugador2.png' %}"/>
+	</a>
+	</div>
+
+	{% if forloop.counter0 == 13 %}
+	<div style="position: absolute;margin: 489px 361px">
+	<a class="" onclick="abrirModal({{jugador.id}}, {{jugador.nombre}}, {{jugador.ritmo}}, {{jugador.tiros}}, {{jugador.pases}}, {{jugador.defensa}}, {{jugador.paradas}}, {{jugador.reflejos}}, {{jugador.posicionamiento}});">
+	  <img src="{% static 'imagenes/jugador2.png' %}"/>
+	</a>
+	</div>
+
+	{% if forloop.counter0 == 14 %}
+	<div style="position: absolute;margin: 549px 361px">
+	<a class="" onclick="abrirModal({{jugador.id}}, {{jugador.nombre}}, {{jugador.ritmo}}, {{jugador.tiros}}, {{jugador.pases}}, {{jugador.defensa}}, {{jugador.paradas}}, {{jugador.reflejos}}, {{jugador.posicionamiento}});">
+	  <img src="{% static 'imagenes/jugador2.png' %}"/>
+	</a>
+	</div>
+
+	{% else %}
+	<div style="position: absolute;margin: 609px 361px">
+	<a class="" onclick="abrirModal({{jugador.id}}, {{jugador.nombre}}, {{jugador.ritmo}}, {{jugador.tiros}}, {{jugador.pases}}, {{jugador.defensa}}, {{jugador.paradas}}, {{jugador.reflejos}}, {{jugador.posicionamiento}});">
+	  <img src="{% static 'imagenes/jugador2.png' %}"/>
+	</a>
+	</div>
+
+	{% endif %}
+
+{% endfor %}
+
+<div class="nav-item dropdown no-arrow">
+  <span>Mouse over me</span>
+  <div class="dropdown-item">
+    <p>Hello World!</p>
+  </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+<div style="position: absolute; margin: 30px 161px" >
+<a class=""   data-toggle="modal" data-target="#exampleModal">
+	<img id="jugador-1" src="{% static 'imagenes/portero1.png' %}"> 
+</a>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nombre Jugador</h5>
+      </div>
+      <div class="modal-body">
+        
+        <div>
+          Ritmo:<span id="ritmo-jugador"></span>
+        </div>
+
+        <div class="">
+          Tiros:<span id="tiros-jugador"></span>      
+        </div>
+
+        <div class="">
+          Pases:<span id="pases-jugador"></span>  
+        </div>
+
+        <div class="">
+          Defensa:<span id="defensa-jugador"></span>
+        </div>
+
+          <div class="" style="padding-top:10px;">
+            <center>Califica la Posicion del Jugador:</center>
+            <form>
+            <p class="clasificacion" align="center">
+                <input id="radio1" type="radio" name="estrellas" value="5"><!--
+              --><label for="radio1">★</label><!--
+              --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+              --><label for="radio2">★</label><!--
+              --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+              --><label for="radio3">★</label><!--
+              --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+              --><label for="radio4">★</label><!--
+              --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+              --><label for="radio5">★</label>
+            </p>
+            </form>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-primary">Guardar Calificacion</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+     
+
+<div style="position: absolute; margin: 159px 86px">
+<a class="" data-toggle="modal" data-target="#exampleModal">
+	<img id="jugador-2" src="{% static 'imagenes/jugador1.png' %}"> 
+</a>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nombre Jugador</h5>
+      </div>
+      <div class="modal-body">
+        
+        <div>
+          Ritmo:<span id="ritmo-jugador"></span>
+        </div>
+
+        <div class="">
+          Tiros:<span id="tiros-jugador"></span>      
+        </div>
+
+        <div class="">
+          Pases:<span id="pases-jugador"></span>  
+        </div>
+
+        <div class="">
+          Defensa:<span id="defensa-jugador"></span>
+        </div>
+
+          <div class="" style="padding-top:10px;">
+            <center>Califica la Posicion del Jugador:</center>
+            <form>
+            <p class="clasificacion" align="center">
+                <input id="radio1" type="radio" name="estrellas" value="5"><!--
+              --><label for="radio1">★</label><!--
+              --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+              --><label for="radio2">★</label><!--
+              --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+              --><label for="radio3">★</label><!--
+              --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+              --><label for="radio4">★</label><!--
+              --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+              --><label for="radio5">★</label>
+            </p>
+            </form>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-primary">Guardar Calificacion</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div style="position: absolute; margin: 159px 236px">
+<a class="" data-toggle="modal" data-target="#exampleModal">
+  <img id="jugador-3" src="{% static 'imagenes/jugador1.png' %}"> 
+</a>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nombre Jugador</h5>
+      </div>
+      <div class="modal-body">
+        
+        <div>
+          Ritmo:<span id="ritmo-jugador"></span>
+        </div>
+
+        <div class="">
+          Tiros:<span id="tiros-jugador"></span>      
+        </div>
+
+        <div class="">
+          Pases:<span id="pases-jugador"></span>  
+        </div>
+
+        <div class="">
+          Defensa:<span id="defensa-jugador"></span>
+        </div>
+
+          <div class="" style="padding-top:10px;">
+            <center>Califica la Posicion del Jugador:</center>
+            <form>
+            <p class="clasificacion" align="center">
+                <input id="radio1" type="radio" name="estrellas" value="5"><!--
+              --><label for="radio1">★</label><!--
+              --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+              --><label for="radio2">★</label><!--
+              --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+              --><label for="radio3">★</label><!--
+              --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+              --><label for="radio4">★</label><!--
+              --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+              --><label for="radio5">★</label>
+            </p>
+            </form>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-primary">Guardar Calificacion</button>
+      </div>
+    </div>
+  </div>
+</div> 
+</div>
+
+
+<div style="position: absolute; margin: 253px 124px">
+<a class="" data-toggle="modal" data-target="#exampleModal">
+  <img id="jugador-4" src="{% static 'imagenes/jugador1.png' %}"> 
+</a>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nombre Jugador</h5>
+      </div>
+      <div class="modal-body">
+        
+        <div>
+          Ritmo:<span id="ritmo-jugador"></span>
+        </div>
+
+        <div class="">
+          Tiros:<span id="tiros-jugador"></span>      
+        </div>
+
+        <div class="">
+          Pases:<span id="pases-jugador"></span>  
+        </div>
+
+        <div class="">
+          Defensa:<span id="defensa-jugador"></span>
+        </div>
+
+          <div class="" style="padding-top:10px;">
+            <center>Califica la Posicion del Jugador:</center>
+            <form>
+            <p class="clasificacion" align="center">
+                <input id="radio1" type="radio" name="estrellas" value="5"><!--
+              --><label for="radio1">★</label><!--
+              --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+              --><label for="radio2">★</label><!--
+              --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+              --><label for="radio3">★</label><!--
+              --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+              --><label for="radio4">★</label><!--
+              --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+              --><label for="radio5">★</label>
+            </p>
+            </form>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-primary">Guardar Calificacion</button>
+      </div>
+    </div>
+  </div>
+</div> 
+</div>
+
+
+<div style="position: absolute; margin: 253px 194px">
+<a class="" data-toggle="modal" data-target="#exampleModal">
+  <img id="jugador-5" src="{% static 'imagenes/jugador1.png' %}"> 
+</a>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nombre Jugador</h5>
+      </div>
+      <div class="modal-body">
+        
+        <div>
+          Ritmo:<span id="ritmo-jugador"></span>
+        </div>
+
+        <div class="">
+          Tiros:<span id="tiros-jugador"></span>      
+        </div>
+
+        <div class="">
+          Pases:<span id="pases-jugador"></span>  
+        </div>
+
+        <div class="">
+          Defensa:<span id="defensa-jugador"></span>
+        </div>
+
+          <div class="" style="padding-top:10px;">
+            <center>Califica la Posicion del Jugador:</center>
+            <form>
+            <p class="clasificacion" align="center">
+                <input id="radio1" type="radio" name="estrellas" value="5"><!--
+              --><label for="radio1">★</label><!--
+              --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+              --><label for="radio2">★</label><!--
+              --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+              --><label for="radio3">★</label><!--
+              --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+              --><label for="radio4">★</label><!--
+              --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+              --><label for="radio5">★</label>
+            </p>
+            </form>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-primary">Guardar Calificacion</button>
+      </div>
+    </div>
+  </div>
+</div>  
+</div>
+
+
+<div style="position: absolute; margin: 99px 361px">
+ <a class="" data-toggle="modal" data-target="#exampleModal">
+  <img id="jugador-6" src="{% static 'imagenes/jugador1.png' %}"> 
+</a>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nombre Jugador</h5>
+      </div>
+      <div class="modal-body">
+        
+        <div>
+          Ritmo:<span id="ritmo-jugador"></span>
+        </div>
+
+        <div class="">
+          Tiros:<span id="tiros-jugador"></span>      
+        </div>
+
+        <div class="">
+          Pases:<span id="pases-jugador"></span>  
+        </div>
+
+        <div class="">
+          Defensa:<span id="defensa-jugador"></span>
+        </div>
+
+          <div class="" style="padding-top:10px;">
+            <center>Califica la Posicion del Jugador:</center>
+            <form>
+            <p class="clasificacion" align="center">
+                <input id="radio1" type="radio" name="estrellas" value="5"><!--
+              --><label for="radio1">★</label><!--
+              --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+              --><label for="radio2">★</label><!--
+              --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+              --><label for="radio3">★</label><!--
+              --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+              --><label for="radio4">★</label><!--
+              --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+              --><label for="radio5">★</label>
+            </p>
+            </form>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-primary">Guardar Calificacion</button>
+      </div>
+    </div>
+  </div>
+</div> 
+</div>
+
+
+<div style="position: absolute; margin: 39px 361px">
+<a class="" data-toggle="modal" data-target="#exampleModal">
+  <img id="jugador-7" src="{% static 'imagenes/jugador1.png' %}"> 
+</a>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nombre Jugador</h5>
+      </div>
+      <div class="modal-body">
+        
+        <div>
+          Ritmo:<span id="ritmo-jugador"></span>
+        </div>
+
+        <div class="">
+          Tiros:<span id="tiros-jugador"></span>      
+        </div>
+
+        <div class="">
+          Pases:<span id="pases-jugador"></span>  
+        </div>
+
+        <div class="">
+          Defensa:<span id="defensa-jugador"></span>
+        </div>
+
+          <div class="" style="padding-top:10px;">
+            <center>Califica la Posicion del Jugador:</center>
+            <form>
+            <p class="clasificacion" align="center">
+                <input id="radio1" type="radio" name="estrellas" value="5"><!--
+              --><label for="radio1">★</label><!--
+              --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+              --><label for="radio2">★</label><!--
+              --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+              --><label for="radio3">★</label><!--
+              --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+              --><label for="radio4">★</label><!--
+              --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+              --><label for="radio5">★</label>
+            </p>
+            </form>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-primary">Guardar Calificacion</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div style="position: absolute; margin: 159px 361px">
+<a class="" data-toggle="modal" data-target="#exampleModal">
+  <img id="jugador-8" src="{% static 'imagenes/jugador1.png' %}"> 
+</a>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nombre Jugador</h5>
+      </div>
+      <div class="modal-body">
+        
+        <div>
+          Ritmo:<span id="ritmo-jugador"></span>
+        </div>
+
+        <div class="">
+          Tiros:<span id="tiros-jugador"></span>      
+        </div>
+
+        <div class="">
+          Pases:<span id="pases-jugador"></span>  
+        </div>
+
+        <div class="">
+          Defensa:<span id="defensa-jugador"></span>
+        </div>
+
+          <div class="" style="padding-top:10px;">
+            <center>Califica la Posicion del Jugador:</center>
+            <form>
+            <p class="clasificacion" align="center">
+                <input id="radio1" type="radio" name="estrellas" value="5"><!--
+              --><label for="radio1">★</label><!--
+              --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+              --><label for="radio2">★</label><!--
+              --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+              --><label for="radio3">★</label><!--
+              --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+              --><label for="radio4">★</label><!--
+              --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+              --><label for="radio5">★</label>
+            </p>
+            </form>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-primary">Guardar Calificacion</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+<div style="position: absolute; margin: 619px 161px">
+<a class="" data-toggle="modal" data-target="#exampleModal">
+<img id="jugador-9" src="{% static 'imagenes/portero2.png' %}">
+</a>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nombre Jugador</h5>
+      </div>
+      <div class="modal-body">
+        
+        <div>
+          Ritmo:<span id="ritmo-jugador"></span>
+        </div>
+
+        <div class="">
+          Tiros:<span id="tiros-jugador"></span>      
+        </div>
+
+        <div class="">
+          Pases:<span id="pases-jugador"></span>  
+        </div>
+
+        <div class="">
+          Defensa:<span id="defensa-jugador"></span>
+        </div>
+
+          <div class="" style="padding-top:10px;">
+            <center>Califica la Posicion del Jugador:</center>
+            <form>
+            <p class="clasificacion" align="center">
+                <input id="radio1" type="radio" name="estrellas" value="5"><!--
+              --><label for="radio1">★</label><!--
+              --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+              --><label for="radio2">★</label><!--
+              --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+              --><label for="radio3">★</label><!--
+              --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+              --><label for="radio4">★</label><!--
+              --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+              --><label for="radio5">★</label>
+            </p>
+            </form>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-primary">Guardar Calificacion</button>
+      </div>
+    </div>
+  </div>
+</div>  
+</div>
+
+<div style="position: absolute; margin: 489px 86px">
+<a class="" data-toggle="modal" data-target="#exampleModal">
+<img id="jugador-10" src="{% static 'imagenes/jugador2.png' %}">
+</a>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nombre Jugador</h5>
+      </div>
+      <div class="modal-body">
+        
+        <div>
+          Ritmo:<span id="ritmo-jugador"></span>
+        </div>
+
+        <div class="">
+          Tiros:<span id="tiros-jugador"></span>      
+        </div>
+
+        <div class="">
+          Pases:<span id="pases-jugador"></span>  
+        </div>
+
+        <div class="">
+          Defensa:<span id="defensa-jugador"></span>
+        </div>
+
+          <div class="" style="padding-top:10px;">
+            <center>Califica la Posicion del Jugador:</center>
+            <form>
+            <p class="clasificacion" align="center">
+                <input id="radio1" type="radio" name="estrellas" value="5"><!--
+              --><label for="radio1">★</label><!--
+              --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+              --><label for="radio2">★</label><!--
+              --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+              --><label for="radio3">★</label><!--
+              --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+              --><label for="radio4">★</label><!--
+              --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+              --><label for="radio5">★</label>
+            </p>
+            </form>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-primary">Guardar Calificacion</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div style="position: absolute; margin: 489px 236px">
+<a class="" data-toggle="modal" data-target="#exampleModal">
+<img id="jugador-11" src="{% static 'imagenes/jugador2.png' %}">
+</a> 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nombre Jugador</h5>
+      </div>
+      <div class="modal-body">
+        
+        <div>
+          Ritmo:<span id="ritmo-jugador"></span>
+        </div>
+
+        <div class="">
+          Tiros:<span id="tiros-jugador"></span>      
+        </div>
+
+        <div class="">
+          Pases:<span id="pases-jugador"></span>  
+        </div>
+
+        <div class="">
+          Defensa:<span id="defensa-jugador"></span>
+        </div>
+
+          <div class="" style="padding-top:10px;">
+            <center>Califica la Posicion del Jugador:</center>
+            <form>
+            <p class="clasificacion" align="center">
+                <input id="radio1" type="radio" name="estrellas" value="5"><!--
+              --><label for="radio1">★</label><!--
+              --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+              --><label for="radio2">★</label><!--
+              --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+              --><label for="radio3">★</label><!--
+              --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+              --><label for="radio4">★</label><!--
+              --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+              --><label for="radio5">★</label>
+            </p>
+            </form>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-primary">Guardar Calificacion</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div style="position: absolute; margin: 394px 124px">
+<a class="" data-toggle="modal" data-target="#exampleModal">
+<img id="jugador-12" src="{% static 'imagenes/jugador2.png' %}">
+</a>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nombre Jugador</h5>
+      </div>
+      <div class="modal-body">
+        
+        <div>
+          Ritmo:<span id="ritmo-jugador"></span>
+        </div>
+
+        <div class="">
+          Tiros:<span id="tiros-jugador"></span>      
+        </div>
+
+        <div class="">
+          Pases:<span id="pases-jugador"></span>  
+        </div>
+
+        <div class="">
+          Defensa:<span id="defensa-jugador"></span>
+        </div>
+
+          <div class="" style="padding-top:10px;">
+            <center>Califica la Posicion del Jugador:</center>
+            <form>
+            <p class="clasificacion" align="center">
+                <input id="radio1" type="radio" name="estrellas" value="5"><!--
+              --><label for="radio1">★</label><!--
+              --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+              --><label for="radio2">★</label><!--
+              --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+              --><label for="radio3">★</label><!--
+              --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+              --><label for="radio4">★</label><!--
+              --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+              --><label for="radio5">★</label>
+            </p>
+            </form>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-primary">Guardar Calificacion</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div style="position: absolute; margin: 394px 194px">
+<a class="" data-toggle="modal" data-target="#exampleModal">
+<img id="jugador-13" src="{% static 'imagenes/jugador2.png' %}">
+</a> 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nombre Jugador</h5>
+      </div>
+      <div class="modal-body">
+        
+        <div>
+          Ritmo:<span id="ritmo-jugador"></span>
+        </div>
+
+        <div class="">
+          Tiros:<span id="tiros-jugador"></span>      
+        </div>
+
+        <div class="">
+          Pases:<span id="pases-jugador"></span>  
+        </div>
+
+        <div class="">
+          Defensa:<span id="defensa-jugador"></span>
+        </div>
+
+          <div class="" style="padding-top:10px;">
+            <center>Califica la Posicion del Jugador:</center>
+            <form>
+            <p class="clasificacion" align="center">
+                <input id="radio1" type="radio" name="estrellas" value="5"><!--
+              --><label for="radio1">★</label><!--
+              --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+              --><label for="radio2">★</label><!--
+              --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+              --><label for="radio3">★</label><!--
+              --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+              --><label for="radio4">★</label><!--
+              --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+              --><label for="radio5">★</label>
+            </p>
+            </form>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-primary">Guardar Calificacion</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div style="position: absolute; margin: 489px 361px">
+<a class="" data-toggle="modal" data-target="#exampleModal">
+<img id="jugador-14" src="{% static 'imagenes/jugador2.png' %}">
+</a>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nombre Jugador</h5>
+      </div>
+      <div class="modal-body">
+        
+        <div>
+          Ritmo:<span id="ritmo-jugador"></span>
+        </div>
+
+        <div class="">
+          Tiros:<span id="tiros-jugador"></span>      
+        </div>
+
+        <div class="">
+          Pases:<span id="pases-jugador"></span>  
+        </div>
+
+        <div class="">
+          Defensa:<span id="defensa-jugador"></span>
+        </div>
+
+          <div class="" style="padding-top:10px;">
+            <center>Califica la Posicion del Jugador:</center>
+            <form>
+            <p class="clasificacion" align="center">
+                <input id="radio1" type="radio" name="estrellas" value="5"><!--
+              --><label for="radio1">★</label><!--
+              --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+              --><label for="radio2">★</label><!--
+              --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+              --><label for="radio3">★</label><!--
+              --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+              --><label for="radio4">★</label><!--
+              --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+              --><label for="radio5">★</label>
+            </p>
+            </form>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-primary">Guardar Calificacion</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div style="position: absolute; margin: 549px 361px">
+<a class="" data-toggle="modal" data-target="#exampleModal">
+<img id="jugador-15" src="{% static 'imagenes/jugador2.png' %}">  
+</a>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nombre Jugador</h5>
+      </div>
+      <div class="modal-body">
+        
+        <div>
+          Ritmo:<span id="ritmo-jugador"></span>
+        </div>
+
+        <div class="">
+          Tiros:<span id="tiros-jugador"></span>      
+        </div>
+
+        <div class="">
+          Pases:<span id="pases-jugador"></span>  
+        </div>
+
+        <div class="">
+          Defensa:<span id="defensa-jugador"></span>
+        </div>
+
+          <div class="" style="padding-top:10px;">
+            <center>Califica la Posicion del Jugador:</center>
+            <form>
+            <p class="clasificacion" align="center">
+                <input id="radio1" type="radio" name="estrellas" value="5"><!--
+              --><label for="radio1">★</label><!--
+              --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+              --><label for="radio2">★</label><!--
+              --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+              --><label for="radio3">★</label><!--
+              --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+              --><label for="radio4">★</label><!--
+              --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+              --><label for="radio5">★</label>
+            </p>
+            </form>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-primary">Guardar Calificacion</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div style="position: absolute; margin: 609px 361px">
+<a class="" data-toggle="modal" data-target="#exampleModal">
+<img id="jugador-16" src="{% static 'imagenes/jugador2.png' %}">
+</a>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nombre Jugador</h5>
+      </div>
+      <div class="modal-body">
+        
+        <div>
+          Ritmo:<span id="ritmo-jugador"></span>
+        </div>
+
+        <div class="">
+          Tiros:<span id="tiros-jugador"></span>      
+        </div>
+
+        <div class="">
+          Pases:<span id="pases-jugador"></span>  
+        </div>
+
+        <div class="">
+          Defensa:<span id="defensa-jugador"></span>
+        </div>
+
+          <div class="" style="padding-top:10px;">
+            <center>Califica la Posicion del Jugador:</center>
+            <form>
+            <p class="clasificacion" align="center">
+                <input id="radio1" type="radio" name="estrellas" value="5"><!--
+              --><label for="radio1">★</label><!--
+              --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+              --><label for="radio2">★</label><!--
+              --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+              --><label for="radio3">★</label><!--
+              --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+              --><label for="radio4">★</label><!--
+              --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+              --><label for="radio5">★</label>
+            </p>
+            </form>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-primary">Guardar Calificacion</button>
+      </div>
+    </div>
+  </div>
+</div> 
+</div>

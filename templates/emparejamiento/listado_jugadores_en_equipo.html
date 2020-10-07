@@ -1,0 +1,71 @@
+{% extends 'base/base.html' %}
+
+{% block titulo %} Lista jugadores en equipo {% endblock %}
+
+{%block app_name %}
+Lista de los jugadores que estan dentro del equipo
+{% endblock %}
+
+{% block contenido %}
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-primary">
+      <center>Tabla equipo/jugador</center>
+    </h6>
+  </div>
+  <div class="card-body">
+    <center>
+      <div class="table-responsive">
+        <table class="table-sm table-bordered" id="dataTable" width="50%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>
+                <center>Jugador</center>
+              </th>
+              <th>
+                <center>Equipo</center>
+              </th>
+              <th>
+                <center>Id Partido</center>
+              </th>
+              <th>
+                <center>Confirmar Disponibilidad</center>
+              </th>
+
+            </tr>
+          </thead>
+          <tbody>
+            {% if object_list %}
+            {% for jugadorequipo in object_list %}
+            <tr>
+              <td>
+                <center>{{jugadorequipo.id_jugador.nombre_completo}}</center>
+              </td>
+              <td>
+                <center>{{jugadorequipo.id_equipo.nombre_equipo}}</center>
+              </td>
+              <td>
+                <center>{{jugadorequipo.id_partido_id}}</center>
+              </td>
+              <td class="text-center">
+                {% if user.is_staff or user.jugador.id == jugadorequipo.id_jugador_id %}
+                <a class="btn btn-primary btn-sm" href="{% url 'emparejamiento:confimar_disponibilidad' jugadorequipo.id %}"> 
+                Confirmacion
+                </a>
+                {% endif %}
+              </td>
+            </tr>
+            {% endfor %}
+
+            {% else %}
+            <h1>No hay registros de jugadores en equipos</h1>
+
+            {% endif %}
+          </tbody>
+        </table>
+      </div>
+    </center>
+  </div>
+</div>
+
+{% endblock %}

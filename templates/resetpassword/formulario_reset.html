@@ -1,0 +1,35 @@
+{% extends 'base/base.html' %}
+
+{% block titulo %}
+Recuperar contraseña
+{% endblock %}
+
+
+{%block sidebar %}
+{% endblock %}
+
+
+{%block topbar %}
+{% endblock %}
+
+{% block contenido %}
+
+<div class="col-lg-6 align-self-center">
+    <div class="p-5">
+
+		<div class="text-center">
+		    <h1 class="h4 text-gray-900 mb-4">Recuperar contraseña</h1>
+		</div>
+
+		<form method="post">
+			{% csrf_token %}
+
+			<div class="form-group">
+				<input type="email" for="id_email" name="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email"> 
+		    </div>
+		<button type="submit" class="btn btn-primary btn-user btn-block">Enviar</button>
+		</form>
+	</div>
+</div>		
+
+{% endblock %}

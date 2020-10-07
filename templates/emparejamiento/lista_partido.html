@@ -1,0 +1,107 @@
+{% extends 'base/base.html' %}
+
+{% block titulo %} Lista Partidos {% endblock %}
+
+{%block app_name %}
+Lista de todos los partidos realizados
+{% endblock %}
+
+{% block contenido %}
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-primary">
+      <center>Lista de partidos</center>
+    </h6>
+  </div>
+  <div class="card-body">
+    <center>
+      <div class="table-responsive">
+        <table class="table-sm table-bordered" id="dataTable" width="80%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>
+                <center>Id Partido</center>
+              </th>
+              <th>
+                <center>Fecha</center>
+              </th>
+              <th>
+                <center>Estado</center>
+              </th>
+              <th>
+                <center>Equipo local</center>
+              </th>
+              <th>
+                <center>Equipo visitante</center>
+              </th>
+              {% if user.is_staff %}
+              <th>
+                <center></center>
+              </th>
+              {% endif %}
+              <th>
+                <center></center>
+              </th>
+
+            </tr>
+          </thead>
+          <tbody>
+            {% if object_list %}
+            {% for partido in object_list %}
+            <tr>
+              <td>
+                <center>{{partido.id}}</center>
+              </td>
+              <td>
+                <center>{{partido.fecha}}</center>
+              </td>
+              <td>
+                <center>{{partido.estado|title}}</center>
+              </td>
+              <td>
+                <center>{{partido.id_equipo1.nombre_equipo}}</center>
+              </td>
+              <td>
+                <center>{{partido.id_equipo2.nombre_equipo}}</center>
+              </td>
+              {% if user.is_staff %}
+              <td>
+                <center>
+                  <a class="btn-circle btn-danger btn-sm"
+                    href="{% url 'emparejamiento:eliminar_partidos' partido.id %}">
+                    <i class="fas fa-trash" data-toggle="tooltip" title="Editar"></i>
+                  </a>
+                </center>
+              </td>
+              {% endif %}
+              <td>
+                <center>
+                  <a class="btn-circle btn-info btn-sm" href="{% url 'emparejamiento:formacion_partido' partido.id %}">
+                    <i class="fas fa-info" data-toggle="tooltip" title="Ver"></i>
+                  </a>
+                </center>
+              </td>
+            </tr>
+            {% endfor %}
+
+            {% else %}
+            <h1>No hay resgistros de partidos</h1>
+
+            {% endif %}
+          </tbody>
+        </table>
+      </div>
+    </center>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block javascript %}
+{{block.super}}
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base/base.html' %}
+
+
+{% block titulo %}
+Confirmar Disponibilidad
+{% endblock %}
+
+{% block app_name %}
+Formulario para Confirmar Disponibilidad
+{% endblock %}
+
+{% block header %}
+<h3>Formulario para Confirmar Disponibilidad</h3>
+{% endblock %}
+
+{% block contenido %}
+<div class="container py-4">
+
+    <form id="formulario" method="post">
+        {% csrf_token %}
+
+        <div class="form-group form-check form-check-inline col-6">
+            <label class="col-6" for={{ form.confirmo.name }}> {{ form.confirmo.label }}:</label>
+            {{ form.confirmo }}
+        </div>
+
+        <div>
+            <button type="submit" id="comenzar" class="btn btn-primary btn-success btn-icon-split btn-sm">
+                <span class="icon text-white-50"> <i class="fas fa-check"></i> </span>
+                <span class="text">Guardar</span>
+            </button>
+            <a class="btn btn-secondary btn-sm" href="{% url 'emparejamiento:listar_jugadorequipo' %}">Cancelar</a>
+        </div>
+
+    </form>
+</div>
+
+{% endblock %}
+
+{% block javascript %}
+{{block.super}}
+{% endblock %}

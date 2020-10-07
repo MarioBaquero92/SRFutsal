@@ -1,0 +1,23 @@
+{% extends 'base/base.html' %}
+
+{% block titulo %}
+Eliminar equipo
+{% endblock %}
+
+{% block app_name %}
+Ingresar equipo
+{% endblock %}
+
+{% block header %}
+<h3>Formulario para equipos</h3>
+{% endblock %}
+
+{% block contenido %}
+<form method="post">
+	{% csrf_token %}
+	<h3>¿Desea eliminar el registro de {{ object.nombre_equipo }}?</h3>
+
+	<button class="btn btn-danger" type="submit">Eliminar</button>
+	<a class="btn btn-default" href="{% url 'emparejamiento:listar_equipos' %}">Cancelar</a>
+</form>
+{% endblock %}

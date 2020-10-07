@@ -1,0 +1,468 @@
+{% extends 'base/base.html' %}
+{% load staticfiles %}
+
+{% block titulo %}
+Organizar Partido
+{% endblock %}
+
+{% block app_name %}
+
+<center>
+  
+  <h5>{{partido.id_equipo1}} vs {{partido.id_equipo2}}
+    <br>{{partido.fecha}}</h5>
+</center>
+{% endblock %}
+
+
+
+{% block contenido %}
+
+<h4 class="text-center text-primary">El partido se encuentra {{partido.estado}}.</h4>
+<hr>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Datos del Jugador </h5>
+      </div>
+      <div class="modal-body">
+        <div>
+          Id: <span id="id-jugador"></span>
+        </div>
+        <div>
+          Nombre: <span id="nombre-jugador"></span>
+        </div>
+        <div>
+          Ritmo: <span id="ritmo-jugador"></span>
+        </div>
+        <div class="">
+          Tiros: <span id="tiros-jugador"></span>
+        </div>
+        <div class="">
+          Pases: <span id="pases-jugador"></span>
+        </div>
+        <div class="">
+          Defensa: <span id="defensa-jugador"></span>
+        </div>
+        <div class="">
+          Paradas: <span id="paradas-jugador"></span>
+        </div>
+        <div class="">
+          Reflejos: <span id="reflejos-jugador"></span>
+        </div>
+        <div class="">
+          Postura: <span id="posicionamiento-jugador"></span>
+        </div>
+        <div class="alert alert-danger" id="alerta_hora_partido" style="display: none;">
+          No puedes calificar al jugador hasta que se acabe el partido.
+        </div>
+        <div class="alert alert-danger" id="alerta_mismo_jugador" style="display: none;">
+          No te puedes calificar a ti mismo.
+        </div>
+        {% if puedeCalificar %}
+        <form id="formulario" method="post">
+          {% csrf_token %}
+          <div class="" style="padding-top:10px;">
+            <center>Califica el rendimiento del Jugador:</center>
+            <p class="clasificacion" align="center">
+              <select name="calificacion" required="" id="id_calificacion">
+                <option value="">Seleccionar</option>
+
+                <option value="1">Pesima</option>
+
+                <option value="2">Mal</option>
+
+                <option value="3">Regular</option>
+
+                <option value="4">Buena</option>
+
+                <option value="5">Excelente</option>
+
+              </select>
+              {{form.id_partido}}
+              {{form.jugador}}
+              {{form.calificador}}
+              <input type="hidden" name="id_id_calificacion" class="form-control" id="id_id_calificacion">
+              <!--  <label for="radio1">★</label>
+                        <input id="radio1" type="radio" name="estrellas" value="1">
+
+                        <label for="radio2">★</label>
+                        <input id="radio2" type="radio" name="estrellas" value="2">
+
+                        <label for="radio3">★</label>
+                        <input id="radio3" type="radio" name="estrellas" value="3">
+
+                        <label for="radio4">★</label>
+                        <input id="radio4" type="radio" name="estrellas" value="4">
+
+                        <label for="radio5">★</label>
+                        <input id="radio5" type="radio" name="estrellas" value="5"> -->
+            </p>
+          </div>
+          <div class="modal-footer" style="justify-content: center;">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </div>
+        </form>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+ <div id="cancha" style="width: 800px; height: 600px; text-align:center" >
+
+  <img src="{% static 'imagenes/cancha.jpg' %}" style=" position: absolute">
+  {% for jugador in jugadores1 %}
+  <div id="id{{forloop.counter0}}" style="width: 48px; max-width: 48px; display: inline-block;">
+    {% if user.jugador %}
+    <a id="jugador1" onclick="abrirModal({{jugador}}, {{partido.id}}, '{{partido.fecha}}', '{{user.jugador.id}}')">
+      <img src="{% static 'imagenes/jugador1.png' %}" data-toggle="tooltip" title="{{jugador.nombre_completo}}"
+        style="cursor: pointer;">
+    </a>
+    {% else %}
+    <a id="jugador1" onclick="abrirModal({{jugador}}, {{partido.id}}, '{{partido.fecha}}')">
+      <img src="{% static 'imagenes/jugador1.png' %}" data-toggle="tooltip" title="{{jugador.nombre_completo}}"
+        style="cursor: pointer;">
+    </a>
+    {% endif %}
+  </div>
+  {%endfor%}
+
+
+  {% for jugador in jugadores2 %}
+  <div id="id1{{forloop.counter0}}" style="width: 48px; max-width: 48px; display: inline-block;">
+    {% if user.jugador %}
+    <a id="jugador2" onclick="abrirModal({{jugador}}, {{partido.id}}, '{{partido.fecha}}', '{{user.jugador.id}}')">
+      <img src="{% static 'imagenes/jugador2.png' %}" data-toggle="tooltip" title="{{jugador.nombre_completo}}"
+        style="cursor: pointer;">
+    </a>
+    {% else %}
+    <a id="jugador2" onclick="abrirModal({{jugador}}, {{partido.id}}, '{{partido.fecha}}')">
+      <img src="{% static 'imagenes/jugador2.png' %}" data-toggle="tooltip" title="{{jugador.nombre_completo}}"
+        style="cursor: pointer;">
+    </a>
+    {% endif %}
+  </div>
+  {%endfor%}
+
+</div>
+
+
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+
+
+{% block javascript %}
+{{block.super}}
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+  var puedeCalificarHora = false;
+  var puedeCalificarOtrosJugadores = true;
+  function abrirModal(jugador, id_partido, fecha, user_jugador_id) {
+    const fechaString = String(fecha);
+    const fechaSplit = fechaString.split(" ");
+    const dia = fechaSplit[0];
+    const mes = extraerMes(fechaSplit[2]);
+    const hora = Number(fechaSplit[7].split(":")[0]) + 1;
+    const anio = fechaSplit[4];
+    const fechaDate = new Date(anio, mes - 1, dia);
+    // const ahora = new Date(2020, 8 - 1, 21, 18);
+    const ahora = new Date()
+    fechaDate.setHours(hora);
+    diferenciaDeHoras = diff_hours(fechaDate, ahora);
+    console.log(diferenciaDeHoras);
+    puedeCalificarHora = diferenciaDeHoras == 0;
+    puedeCalificarOtrosJugadores = Number(jugador.id) !== Number(user_jugador_id);
+    mostrarUOcultarAlertas(puedeCalificarHora, puedeCalificarOtrosJugadores)
+    $("#id-jugador").text(" " + jugador.id);
+    $("#id_id_jugador").attr('id', jugador.id);
+    $("#" + jugador.id).attr('value', jugador.id);
+    $("#nombre-jugador").text(" " + jugador.nombre_completo);
+    $("#ritmo-jugador").text(" " + jugador.ritmo);
+    $("#tiros-jugador").text(" " + jugador.tiros);
+    $("#pases-jugador").text(" " + jugador.pases);
+    $("#defensa-jugador").text(" " + jugador.defensa);
+    $("#paradas-jugador").text(" " + jugador.paradas);
+    $("#reflejos-jugador").text(" " + jugador.reflejos);
+    $("#posicionamiento-jugador").text(" " + jugador.posicionamiento);
+    $("#id_id_partido").attr('id', "id_partido");
+    $("#id_partido").attr('value', id_partido);
+    $("#id_jugador").attr('value', Number(jugador.id));
+    $("#id_calificador").attr('value', Number(user_jugador_id));
+    $("#id_id_calificacion").attr('value', Number(jugador.id_calificacion));
+    $("#id_calificacion").val(jugador.valor_calificacion);
+
+
+
+    $('#exampleModal').modal('show');
+  }
+
+  function mostrarUOcultarAlertas(puedeCalificarHora, puedeCalificarOtrosJugadores) {
+    if ($('#formulario').css('display') == 'block') {
+      if (puedeCalificarOtrosJugadores) {
+        $("#alerta_mismo_jugador").hide();
+        if (!puedeCalificarHora) {
+          $('#id_calificacion').prop('disabled', false);
+          $("#alerta_hora_partido").hide();
+        } else {
+          $('#id_calificacion').prop('disabled', 'disabled');
+          $("#alerta_hora_partido").show();
+        }
+      } else {
+        $('#id_calificacion').prop('disabled', 'disabled');
+        $("#alerta_mismo_jugador").show();
+      }
+    }
+  }
+
+  function diff_hours(dt2, dt1) {
+    var diff = (dt2.getTime() - dt1.getTime()) / 1000;
+    diff /= (60 * 60);
+    return Math.abs(Math.round(diff));
+  }
+
+  $(document).ready(function () {
+    $("#formulario").submit(function (event) {
+      event.preventDefault();
+      var id_partido = $("#id_partido").val();
+      var id_jugador = $("#id_jugador").val();
+      var id_calificador = $("#id_calificador").val();
+      var calificacion = $("#id_calificacion").val();
+      const id_calificacion =  $("#id_id_calificacion").val();
+      var id_id_calificacion;
+      if(!isNaN(id_calificacion)) {
+        id_id_calificacion = id_calificacion;
+      } else {
+        id_id_calificacion = -1;
+      }
+      var url_guardar = "{% url 'emparejamiento:formacion_partido' 0 %}".replace('0', id_partido);
+      var el = document.getElementsByName("csrfmiddlewaretoken");
+      var csrf_value = el[0].getAttribute("value");
+
+      if (calificacion === "") {
+        swal("¡Alerta!", "Por favor selecciona una calificación", "error");
+      }
+      else {
+        $.ajax({
+          type: "POST",
+          url: url_guardar,
+          data: {
+            'csrfmiddlewaretoken': csrf_value,
+            'id_partido': id_partido,
+            'id_jugador': id_jugador,
+            'id_calificador': id_calificador,
+            'calificacion': calificacion,
+            'id_calificacion': id_id_calificacion
+          },
+          success: function () {
+            setTimeout(function () {
+              toastr.options = {
+                closeButton: true,
+                progressBar: true,
+                showMethod: 'slideDown',
+                timeOut: 2000
+              };
+              toastr.success('Calificación exitosa', 'Exitoso');
+            }, 10);
+            setTimeout(function () {
+              window.location = url_guardar;
+            }, 2500)
+          }
+        });
+
+      }
+      return false;
+    });
+
+  });
+
+
+
+  function extraerMes(mes) {
+    let numeroMes;
+    switch (mes) {
+      case 'Enero':
+        numeroMes = 1;
+        break;
+      case 'Febrero':
+        numeroMes = 2;
+        break;
+      case 'Marzo':
+        numeroMes = 3;
+        break;
+      case 'Abril':
+        numeroMes = 4;
+        break;
+      case 'Mayo':
+        numeroMes = 5;
+        break;
+      case 'Junio':
+        numeroMes = 6;
+        break;
+      case 'Julio':
+        numeroMes = 7;
+        break;
+      case 'Agosto':
+        numeroMes = 8;
+        break;
+      case 'Septiembre':
+        numeroMes = 9;
+        break;
+      case 'Octubre':
+        numeroMes = 10;
+        break;
+      case 'Noviembre':
+        numeroMes = 11;
+        break;
+      case 'Diciembre':
+        numeroMes = 12;
+        break;
+    }
+    return numeroMes;
+  }
+</script>
+<style>
+  #cancha {}
+
+  #id7 {
+    position: absolute;
+
+    margin: 30px 122px
+      /*width:80%;
+  height:80%;*/
+  }
+
+  #id4 {
+    position: absolute;
+
+    margin: 122px 65px
+      /*width:80%;
+  height:80%;*/
+  }
+
+  #id2 {
+    position: absolute;
+
+    margin: 122px 185px
+      /*width:80%;
+  height:80%;*/
+  }
+
+  #id0 {
+    position: absolute;
+
+    margin: 195px 90px
+      /*width:80%;
+  height:80%;*/
+  }
+
+  #id5 {
+    position: absolute;
+
+    margin: 195px 155px
+      /*   width:80%;
+  height:80%;*/
+
+  }
+
+  #id1 {
+    position: absolute;
+
+    margin: 30px 280px
+      /*    width:80%;
+  height:80%;*/
+  }
+
+  #id6 {
+    position: absolute;
+
+    margin: 110px 280px
+      /*    width:80%;
+  height:80%;*/
+  }
+
+  #id3 {
+    position: absolute;
+
+    margin: 190px 280px
+      /*    width:80%;
+  height:80%;*/
+  }
+
+  #id17 {
+    position: absolute;
+
+    margin: 458px 122px
+      /*width:80%;
+  height:80%;*/
+  }
+
+  #id10 {
+    position: absolute;
+
+    margin: 372px 65px
+      /*width:80%;
+  height:80%;*/
+  }
+
+  #id12 {
+    position: absolute;
+
+    margin: 372px 185px
+      /*width:80%;
+  height:80%;*/
+  }
+
+  #id14 {
+    position: absolute;
+
+    margin: 300px 90px
+      /*width:80%;
+  height:80%;*/
+  }
+
+  #id13 {
+    position: absolute;
+
+    margin: 300px 155px
+      /*   width:80%;
+  height:80%;*/
+
+  }
+
+  #id11 {
+    position: absolute;
+
+    margin: 298px 280px
+      /*    width:80%;
+  height:80%;*/
+  }
+
+  #id16 {
+    position: absolute;
+
+    margin: 378px 280px
+      /*    width:80%;
+  height:80%;*/
+  }
+
+  #id15 {
+    position: absolute;
+
+    margin: 458px 280px
+      /*    width:80%;
+  height:80%;*/
+  }
+</style>
+
+
+{% endblock %}

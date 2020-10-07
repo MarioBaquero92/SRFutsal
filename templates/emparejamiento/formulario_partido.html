@@ -1,0 +1,311 @@
+{% extends 'base/base.html' %}
+
+
+{% block titulo %}
+Organizar Partido
+{% endblock %}
+
+{% block app_name %}
+Formulario para Organizar Partido
+{% endblock %}
+
+{% block header %}
+<h3>Formulario para Organizar Partido</h3>
+{% endblock %}
+
+{% block contenido %}
+
+<form id="formulario" method="post">
+	{% csrf_token %}
+
+	<center>
+		<div class="form-row" style="justify-content: center;">
+			<!-- <div class="form-group" id="data_1">
+				<label class="font-normal">Simple data input format</label>
+				
+			</div> -->
+			<div class="form-group col-md-4" id="data_1">
+				<div class="col-md-10">
+					<div class="col-md-10">
+						<h1 class="h4 text-gray-900">Día</h1>
+					</div>
+					<div class="input-group date">
+						<span class="input-group-addon"><i class="fa fa-calendar"></i></span><input id="dia" type="text"
+							class="form-control" autocomplete="off">
+					</div>
+					<!-- <select name="dia" class="form-control" required="" id="dia">
+						<option value="" selected="">---------</option>
+						<option value="lun">Lunes</option>
+						<option value="mar">Martes</option>
+						<option value="mie">Miercoles</option>
+						<option value="jue">Jueves</option>
+						<option value="vie">Viernes</option>
+						<option value="sab">Sábado</option>
+					</select> -->
+				</div>
+			</div>
+			<div class="form-group col-md-4">
+				<div class="col-md-10">
+					<div class="col-md-10">
+						<h1 class="h4 text-gray-900">Hora inicio</h1>
+					</div>
+					<select name="hora" class="form-control" required="" id="hora">
+						<option value="" selected="">---------</option>
+						<option value="06">6:00 pm</option>
+						<option value="07">7:00 pm</option>
+						<option value="08">8:00 pm</option>
+						<option value="09">9:00 pm</option>
+						<option value="10">10:00 pm</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="form-row" style="justify-content: center">
+			<div class="form-group col-md-4">
+				<div class="col-md-10">
+					<h1 class="h4 text-gray-900">Equipo Local</h1>
+				</div>
+
+				<div class="col-md-10 mb-3">
+					<label for="{{ form.nombre_completo.name }}"> {{ form.id_equipo1.label }}:</label>
+					{{ form.id_equipo1 }}
+
+				</div>
+
+				<div class="col-md-10 mb-3">
+					<input type="text" class="form-control form-control-user" name="id_jugador" id="jugador-1"
+						placeholder="Portero" disabled="true" required>
+				</div>
+				<div class="col-md-10 mb-3">
+					<input type="text" class="form-control form-control-user" name="id_jugador" id="jugador-2"
+						placeholder="Jugador" disabled="true" required>
+				</div>
+				<div class="col-md-10 mb-3">
+					<input type="text" class="form-control form-control-user" name="id_jugador" id="jugador-3"
+						placeholder="Jugador" disabled="true" required>
+				</div>
+				<div class="col-md-10 mb-3">
+					<input type="text" class="form-control form-control-user" name="id_jugador" id="jugador-4"
+						placeholder="Jugador" disabled="true" required>
+				</div>
+				<div class="col-md-10 mb-3">
+					<input type="text" class="form-control form-control-user" name="id_jugador" id="jugador-5"
+						placeholder="Jugador" disabled="true" required>
+				</div>
+				<div class="col-md-10 mb-3">
+					<input type="text" class="form-control form-control-user" name="id_jugador" id="jugador-6"
+						placeholder="Jugador" disabled="true" required>
+				</div>
+				<div class="col-md-10 mb-3">
+					<input type="text" class="form-control form-control-user" name="id_jugador" id="jugador-7"
+						placeholder="Jugador" disabled="true" required>
+				</div>
+				<div class="col-md-10 mb-3">
+					<input type="text" class="form-control form-control-user" name="id_jugador" id="jugador-8"
+						placeholder="Jugador" disabled="true" required>
+				</div>
+			</div>
+
+			<div class="form-group col-md-4">
+				<div class="col-md-10">
+					<h1 class="h4 text-gray-900">Equipo Visitante</h1>
+				</div>
+
+				<div class="col-md-10 mb-3">
+					<label for="{{ form.nombre_completo.name }}"> {{ form.id_equipo2.label }}:</label>
+					{{ form.id_equipo2 }}
+
+				</div>
+
+				<div class="col-md-10 mb-3">
+					<input type="text" class="form-control form-control-user" name="id_jugador" id="jugador-9"
+						placeholder="Portero" disabled="true" required>
+				</div>
+				<div class="col-md-10 mb-3">
+					<input type="text" class="form-control form-control-user" name="id_jugador" id="jugador-10"
+						placeholder="Jugador" disabled="true" required>
+				</div>
+				<div class="col-md-10 mb-3">
+					<input type="text" class="form-control form-control-user" name="id_jugador" id="jugador-11"
+						placeholder="Jugador" disabled="true" required>
+				</div>
+				<div class="col-md-10 mb-3">
+					<input type="text" class="form-control form-control-user" name="id_jugador" id="jugador-12"
+						placeholder="Jugador" disabled="true" required>
+				</div>
+				<div class="col-md-10 mb-3">
+					<input type="text" class="form-control form-control-user" name="id_jugador" id="jugador-13"
+						placeholder="Jugador" disabled="true" required>
+				</div>
+				<div class="col-md-10 mb-3">
+					<input type="text" class="form-control form-control-user" name="id_jugador" id="jugador-14"
+						placeholder="Jugador" disabled="true" required>
+				</div>
+				<div class="col-md-10 mb-3">
+					<input type="text" class="form-control form-control-user" name="id_jugador" id="jugador-15"
+						placeholder="Jugador" disabled="true" required>
+				</div>
+				<div class="col-md-10 mb-3">
+					<input type="text" class="form-control form-control-user" name="id_jugador" id="jugador-16"
+						placeholder="Jugador" disabled="true" required>
+				</div>
+			</div>
+
+			<div class="col-md-6 mb-3">
+
+				<button type="button" onclick="GenerarJugador();" class="btn btn-primary btn-alert btn-icon-split">
+					<span class="icon text-white-50"> <i class="fas fa-check"></i> </span>
+					<span class="text">Generar Jugadores</span>
+				</button>
+
+				<button type="submit" id="comenzar" class="btn btn-primary btn-success btn-icon-split">
+					<span class="icon text-white-50"> <i class="fas fa-check"></i> </span>
+					<span class="text">Comenzar</span>
+				</button>
+
+
+			</div>
+
+		</div>
+	</center>
+
+</form>
+
+{% endblock %}
+
+{% block javascript %}
+{{block.super}}
+
+<script type="text/javascript">
+	var date = new Date();
+	$('#data_1 .input-group.date').datepicker({
+		startDate: date,
+		daysOfWeekDisabled: [0, 7],
+		todayBtn: "linked",
+		keyboardNavigation: false,
+		forceParse: false,
+		calendarWeeks: true,
+		autoclose: true
+	});
+	var jugadores = {}
+	var fecha_hora;
+	var url_generar = "{% url 'emparejamiento:generar_jugador' %}";
+	function GenerarJugador() {
+		const dia = $('#dia').val();
+		const diaDate = new Date(dia)
+		const diaLetra = extraerDiaSemana(diaDate.getDay());
+		const hora = $('#hora').val();
+		if (hora == '' || diaLetra == '') {
+			swal("¡Alerta!", "Por favor selecciona el día y la hora", "error");
+		} else {
+			const dia_hora = diaLetra + hora;
+			const numeroHora = extraerHora(String(hora));
+			diaDate.setHours(numeroHora);
+			fecha_hora = diaDate;
+			$.ajax({
+				url: url_generar,
+				dataType: 'json',
+				data: {
+					dia_hora
+				},
+				success: function (data) {
+					jugadores = data.jugadores
+					RepartirJugador(jugadores);
+				}
+			});
+		}
+	}
+	function RepartirJugador(jugadores) {
+		jQuery.each(jugadores, function (i, val) {
+			$('#jugador-' + (i + 1)).val(val.fields.nombre_completo);
+		})
+
+	}
+
+	function extraerDiaSemana(dia) {
+		let diaLetra = '';
+		switch (dia) {
+			case 1:
+				diaLetra = 'lun';
+				break;
+			case 2:
+				diaLetra = 'mar';
+				break;
+			case 3:
+				diaLetra = 'mie';
+				break;
+			case 4:
+				diaLetra = 'jue';
+				break;
+			case 5:
+				diaLetra = 'vie';
+				break;
+			case 6:
+				diaLetra = 'sab';
+				break;
+		}
+		return diaLetra;
+	}
+
+	function extraerHora(hora) {
+		let numeroHora;
+		switch (hora) {
+			case '06':
+				numeroHora = 18;
+				break;
+			case '07':
+				numeroHora = 19;
+				break;
+			case '08':
+				numeroHora = 20;
+				break;
+			case '09':
+				numeroHora = 21;
+				break;
+			case '10':
+				numeroHora = 22;
+				break;
+		}
+		return numeroHora;
+	}
+
+	$(document).ready(function () {
+		$("#formulario").submit(function (event) {
+			event.preventDefault();
+			var url_guardar = "{% url 'emparejamiento:crear_partido' %}";
+			var url_lista_partido = "{% url 'emparejamiento:listar_partidos' %}";
+			var el = document.getElementsByName("csrfmiddlewaretoken");
+			var csrf_value = el[0].getAttribute("value");
+			var id_equipo1 = $("#id_id_equipo1").val();
+			var id_equipo2 = $("#id_id_equipo2").val();
+			var jugador = $("#jugador-1").val();
+
+			if (id_equipo1 === id_equipo2) {
+				swal("¡Alerta!", "Los equipos deben de ser diferentes", "error");
+			} else if (jugador === "") {
+				swal("¡Alerta!", "Por favor genere los jugadores recomendados", "error");
+			}
+			else {
+				console.log(jugadores)
+				$.ajax({
+					type: "POST",
+					url: url_guardar,
+					data: {
+						'csrfmiddlewaretoken': csrf_value,
+						'id_equipo1': id_equipo1,
+						'id_equipo2': id_equipo2,
+						'fecha': fecha_hora.getFullYear()+"-"+(fecha_hora.getMonth() + 1)+"-"+fecha_hora.getDate()+" "+fecha_hora.getHours()+":"+fecha_hora.getMinutes(),
+						'jugadores': JSON.stringify(jugadores)
+					},
+					success: function () {
+						window.location = url_lista_partido;
+					}
+				});
+
+			}
+			return false;
+		});
+
+	});
+</script>
+{% endblock %}

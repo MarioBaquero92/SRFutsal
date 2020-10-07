@@ -1,0 +1,90 @@
+{% extends 'base/base.html' %}
+
+{% block titulo %}
+Registrate 
+{% endblock %}
+
+<!-- {% block app_name %}
+Formulario para Ingresar Jugadores
+{% endblock %}
+ -->
+<!-- {% block header %}
+<h3>Formulario para jugadores</h3>
+{% endblock %} -->
+
+{%block sidebar %}
+{% endblock %}
+
+
+{%block topbar %}
+{% endblock %}
+
+
+{% block contenido %}
+<form method="post">
+	{% csrf_token %}
+
+
+<div class="row justify-content-center">
+          <!-- <div class="col-lg-5 d-none d-lg-block bg-register-image"></div> -->
+          <div class="col-lg-7">
+            <div class="p-5">
+              <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-4">Registrate!</h1>
+              </div>
+              
+              <form class="user">
+
+              	<div class="form-group row">
+                  	<div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="text" name="username" class="form-control form-control-user" id="exampleInputUsername" placeholder="Username">
+                 	</div>
+             	</div>
+                <div class="form-group row">
+                  
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="text" name="first_name" class="form-control form-control-user" id="exampleFirstName" placeholder="Nombre">
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="text" name="last_name" class="form-control form-control-user" id="exampleLastName" placeholder="Apellidos">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="email" name="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email">
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="password" name="password1" class="form-control form-control-user" id="exampleInputPassword" placeholder="Contraseña">
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="password" name="password2" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Confirmar contraseña">
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-user btn-block">Registrar Cuenta</button>
+                <!-- <a href="login.html" class="btn btn-primary btn-user btn-block">
+                  Registrar cuenta
+                </a>
+                <hr>
+                <a href="index.html" class="btn btn-google btn-user btn-block">
+                  <i class="fab fa-google fa-fw"></i> Registrar con Google
+                </a>
+                <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                  <i class="fab fa-facebook-f fa-fw"></i> Registrar con Facebook
+                </a> -->
+              </form>
+          
+              <hr>
+              <div class="text-center">
+                <a class="small" href="{% url 'formulario_reset' %}">¿Olvidaste tu contraseña?</a>
+              </div>
+              <div class="text-center">
+                <a class="small" href="{% url 'login' %}">¿Ya tienes una cuenta? Ingresa!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+	
+</form>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base/base.html' %}
+
+{% block titulo %}
+Ingresar Equipo 
+{% endblock %}
+
+{% block app_name %}
+Formulario para registrar equipos
+{% endblock %}
+
+{% block header %}
+
+{% endblock %}
+
+{% block contenido %}
+<!-- <div class="col-lg-6" > -->
+                <div class="p-5" >
+                	<div class="text-center" >
+                    	
+          			</div>
+						<form method="post" style="padding-left: 155px; padding-right: 155px">
+							{% csrf_token %}
+<center>
+							<div class="col-md-4 mb-3">
+	                      		<label for="{{ form.nombre_equipo.name }}"> {{ form.nombre_equipo.label }}:</label>
+	                      		{{ form.nombre_equipo }}
+	                    	</div>
+	                    	
+
+	                    	<div class="col-md-6 mb-3">
+	                    	<button type="submit" class="btn btn-primary btn-success btn-icon-split">
+	                    		<span class="icon text-white-50"> <i class="fas fa-check"></i> </span>
+	                    		<span class="text">Registrar</span>
+	                    	</button>
+	                    	</div>
+</center>
+	                    		
+	                    </form>
+                </div>
+<!-- </div> -->
+		                    
+				
+{% endblock %}

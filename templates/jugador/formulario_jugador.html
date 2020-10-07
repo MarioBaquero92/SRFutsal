@@ -1,0 +1,290 @@
+{% extends 'base/base.html' %}
+
+{% block titulo %}
+Registrar jugador
+{% endblock %}
+
+{% block app_name %}
+<center>Formulario para registro de jugadores</center>
+{% endblock %}
+
+
+{% block contenido %}
+
+<div class="p-4">
+	<div class="text-center">
+
+	</div>
+	<form method="post" style="padding-left: 155px; padding-right: 155px">
+		{% csrf_token %}
+		<center>
+			<div class="form-row">
+				<div class="col-md-4 mb-3">
+					<label for="{{ form3.username.name }}"> {{ form3.username.label }}:</label>
+					<input type="text" name="username" class="form-control" maxlength="50" required="" id="username" autocomplete="off">
+				</div>
+				<div class="col-md-4 mb-3">
+					<label for="{{ form3.password1.name }}"> {{ form3.password1.label }}:</label>
+					<input type="password" name="password1" class="form-control" maxlength="50" required="" id="password1" autocomplete="off">
+				</div>
+				<div class="col-md-4 mb-3">
+					<label for="{{ form3.password2.name }}"> {{ form3.password2.label }}:</label>
+					<input type="password" name="password2" class="form-control" maxlength="50" required="" id="password2" autocomplete="off">
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="col-md-4 mb-3">
+					<label for="{{ form.nombre_completo.name }}"> {{ form.nombre_completo.label }}:</label>
+					{{ form.nombre_completo }}
+				</div>
+				<div class="col-md-4 mb-3">
+					<label for="{{ form.edad.name }}">{{ form.edad.label }}:</label>
+					{{ form.edad }}
+				</div>
+				<div class="col-md-4 mb-3">
+					<label for="{{ form.perfil.name }}">{{ form.perfil.label }}:</label>
+					<br>
+					{{ form.perfil }}
+				</div>
+			</div>
+
+			<div class="form-row">
+				<div class="col-md-4 mb-3">
+					<label for="{{ form.peso.name }}">{{ form.peso.label }}:</label>
+					{{ form.peso }}
+				</div>
+				<div class="col-md-4 mb-3">
+					<label for="{{ form.estatura.name }}">{{ form.estatura.label }}:</label>
+					{{ form.estatura }}
+				</div>
+				<div class="col-md-4 mb-3">
+					<label for="{{ form.ritmo.name }}">{{ form.ritmo.label }}:</label>
+					{{ form.ritmo }}
+				</div>
+			</div>
+
+			<div class="form-row">
+				<div class="col-md-4 mb-3">
+					<label for="{{ form.tiros.name }}">{{ form.tiros.label }}:</label>
+					{{ form.tiros }}
+				</div>
+				<div class="col-md-4 mb-3">
+					<label for="{{ form.pases.name }}">{{ form.pases.label }}:</label>
+					{{ form.pases }}
+				</div>
+				<div class="col-md-4 mb-3">
+					<label for="{{ form.defensa.name }}">{{ form.defensa.label }}:</label>
+					{{ form.defensa }}
+				</div>
+			</div>
+
+			<div class="form-row">
+				<div class="col-md-4 mb-3">
+					<label for="{{ form.paradas.name }}">{{ form.paradas.label }}:</label>
+					{{ form.paradas }}
+				</div>
+				<div class="col-md-4 mb-3">
+					<label for="{{ form.reflejos.name }}">{{ form.reflejos.label }}:</label>
+					{{ form.reflejos }}
+				</div>
+				<div class="col-md-4 mb-3">
+					<label for="{{ form.posicionamiento.name }}">{{ form.posicionamiento.label }}:</label>
+					{{ form.posicionamiento }}
+				</div>
+			</div>
+
+
+
+			{{form2.jugador}}
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Lunes</th>
+						<th scope="col">Martes</th>
+						<th scope="col">Miercoles</th>
+						<th scope="col">Jueves</th>
+						<th scope="col">Viernes</th>
+						<th scope="col">Sabado</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">6:00 Pm</th>
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox" value={{form2.lun06}} </div>
+						</td>
+
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox" value={{form2.mar06}} </div>
+						</td>
+
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox" value={{form2.mie06}} </div>
+						</td>
+
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox" value={{form2.jue06}} </div>
+						</td>
+
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox" value={{form2.vie06}} </div>
+						</td>
+
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox" value={{form2.sab06}} </div>
+						</td>
+
+					</tr>
+
+					<tr>
+						<th scope="row">7:00 Pm</th>
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox" value={{form2.lun07}} </div>
+						</td>
+
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox" value={{form2.mar07}} </div>
+						</td>
+
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox" value={{form2.mie07}} </div>
+						</td>
+
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox" value={{form2.jue07}} </div>
+						</td>
+
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox" value={{form2.vie07}} </div>
+						</td>
+
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox" value={{form2.sab07}} </div>
+						</td>
+					</tr>
+
+					<tr>
+						<th scope="row">8:00 Pm</th>
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox" value={{form2.lun08}} </div>
+						</td>
+
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox" value={{form2.mar08}} </div>
+						</td>
+
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox" value={{form2.mie08}} </div>
+						</td>
+
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox" value={{form2.jue08}} </div>
+						</td>
+
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox" value={{form2.vie08}} </div>
+						</td>
+
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox" value={{form2.sab08}} </div>
+						</td>
+					</tr>
+
+					<tr>
+						<th scope="row">9:00 Pm</th>
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox" value={{form2.lun09}} </div>
+						</td>
+
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox" value={{form2.mar09}} </div>
+						</td>
+
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox" value={{form2.mie09}} </div>
+						</td>
+
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox" value={{form2.jue09}} </div>
+						</td>
+
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox" value={{form2.vie09}} </div>
+						</td>
+
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox" value={{form2.sab09}} </div>
+						</td>
+					</tr>
+
+					<tr>
+						<th scope="row">10:00 Pm</th>
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox" value={{form2.lun10}} </div>
+						</td>
+
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox" value={{form2.mar10}} </div>
+						</td>
+
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox" value={{form2.mie10}} </div>
+						</td>
+
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox" value={{form2.jue10}} </div>
+						</td>
+
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox" value={{form2.vie10}} </div>
+						</td>
+
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox" value={{form2.sab10}} </div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<button type="submit" class="btn btn-primary btn-success btn-icon-split">
+				<span class="icon text-white-50"> <i class="fas fa-check"></i> </span>
+				<span class="text">Registrar</span>
+			</button>
+
+	</form>
+</div>
+</center>
+
+
+{% endblock %}

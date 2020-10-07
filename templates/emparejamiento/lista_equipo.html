@@ -1,0 +1,82 @@
+{% extends 'base/base.html' %}
+
+{% block titulo %} Lista jugadores {% endblock %}
+
+{%block app_name %}
+Lista de todos los jugadores ingresados
+{% endblock %}
+
+{% block contenido %}
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">
+            <center>Tabla jugadores</center>
+        </h6>
+    </div>
+    <div class="card-body">
+        <center>
+            <div class="table-responsive">
+                <table class="table-sm table-bordered" id="dataTable" width="50%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>
+                                <center>Id</center>
+                            </th>
+                            <th>
+                                <center>Nombre del equipo</center>
+                            </th>
+                            <th>
+                            </th>
+                            <th>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% if object_list %}
+                        {% for equipo in object_list %}
+                        <tr>
+                            <td>
+                                <center>{{equipo.id}}</center>
+                            </td>
+                            <td>
+                                <center>{{equipo.nombre_equipo}}</center>
+                            </td>
+
+                            <td>
+                                <center>
+                                    <a class="btn-circle btn-info btn-sm"
+                                        href="{% url 'emparejamiento:editar_equipos' equipo.id %}"><i
+                                            class="fas fa-edit" data-toggle="tooltip" title="Editar"></i></a>
+                                </center>
+                            </td>
+                            <td>
+                                <center>
+                                    <a class="btn-circle btn-danger btn-sm"
+                                        href="{% url 'emparejamiento:eliminar_equipos' equipo.id %}"><i
+                                            class="fas fa-trash" data-toggle="tooltip" title="Eliminar"></i></a>
+                                </center>
+                            </td>
+                        </tr>
+                        {% endfor %}
+
+                        {% else %}
+                        <h1>No hay resgistros de equipos</h1>
+
+                        {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        </center>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block javascript %}
+{{block.super}}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+{% endblock %}

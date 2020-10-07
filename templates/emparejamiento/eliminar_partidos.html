@@ -1,0 +1,23 @@
+{% extends 'base/base.html' %}
+
+{% block titulo %}
+Eliminar Partido
+{% endblock %}
+
+{% block app_name %}
+Ingresar Partido
+{% endblock %}
+
+{% block header %}
+<h3>Formulario para Partidos</h3>
+{% endblock %}
+
+{% block contenido %}
+<form method="post">
+	{% csrf_token %}
+	<h3>¿Desea eliminar el registro de partido {{ object.id_equipo1.nombre_equipo }} vs {{ object.id_equipo2.nombre_equipo }} con fecha {{ object.fecha }}?</h3>
+
+	<button class="btn btn-danger" type="submit">Eliminar</button>
+	<a class="btn btn-default" href="{% url 'emparejamiento:listar_partidos' %}">Cancelar</a>
+</form>
+{% endblock %}

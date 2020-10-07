@@ -1,0 +1,23 @@
+{% extends 'base/base.html' %}
+
+{% block titulo %}
+Ingresar jugador 
+{% endblock %}
+
+{% block app_name %}
+Formulario para Ingresar Jugadores
+{% endblock %}
+
+{% block header %}
+<h3>Formulario para jugadores</h3>
+{% endblock %}
+
+{% block contenido %}
+<form method="post">
+	{% csrf_token %}
+	<h3>¿Desea eliminar el registro de {{ object.nombre_completo }}?</h3>
+
+	<button class="btn btn-danger" type="submit">Eliminar</button>
+	<a class="btn btn-default" href="{% url 'jugador:listar_jugadores' %}">Cancelar</a>
+</form>
+{% endblock %}
